@@ -1,0 +1,40 @@
+# OMP Model & Provider Configuration
+providers:
+  # 本地 CPA
+  openai-codex:
+    baseUrl: http://localhost:8317/backend-api
+    auth: apiKey
+    apiKey: CPA_OH_MY_PI_API_KEY
+
+  # 本地 CPA 通用
+  cpa:
+    baseUrl: http://localhost:8317/v1
+    auth: apiKey
+    apiKey: CPA_OH_MY_PI_API_KEY
+    models:
+    - id: deepseek-flash
+      name: DeepSeek V4.1 Flash
+      api: openai-responses
+      reasoning: true
+      thinking:
+        mode: effort
+        efforts: [ low, high, max ]
+      supportsTools: true
+      input: [ text, image ]
+      # DSH V41 adapter 默认预算，非模型硬上限；CPA 上限未经边界测试。
+      contextWindow: 1000000
+      maxTokens: 256000
+    - id: grok-4.6
+      name: Grok 4.6
+      api: openai-completions
+      reasoning: true
+      thinking:
+        mode: effort
+        efforts: [ low, medium, high, xhigh, max ]
+      supportsTools: true
+      input: [ text, image ]
+      contextWindow: 500000
+      # 官方未声明固定最大输出，沿用参考配置的保守预算。
+      maxTokens: 128000
+      compat:
+        supportsReasoningEffort: true

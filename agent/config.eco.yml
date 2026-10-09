@@ -1,0 +1,44 @@
+setupVersion: 2
+modelRoles:
+  default: openai-codex/gpt-6.1-sol:medium
+  advisor: openai-codex/gpt-6.1-sol:medium
+  commit: cpa/deepseek-flash:max
+  plan: openai-codex/gpt-6.1-sol:high
+  slow: openai-codex/gpt-6.1-sol:xhigh
+  task: cpa/deepseek-flash:max
+  vision: cpa/grok-4.6:medium
+  designer: openai-codex/gpt-6.1-sol:high
+  smol: cpa/deepseek-flash:max
+  tiny: cpa/deepseek-flash:max
+defaultThinkingLevel: max
+modelProviderOrder:
+- openai-codex
+compaction:
+  enabled: true
+  methodOrder:
+  - remote
+  - soft
+task:
+  showResolvedModelBadge: true
+  enableLsp: true
+lsp:
+  enabled: true
+  diagnosticsOnWrite: true
+astGrep:
+  enabled: true
+astEdit:
+  enabled: true
+display:
+  shimmer: classic
+  showTokenUsage: true
+autoResume: false
+hideThinkingBlock: false
+providers:
+  autoThinkingMaxEffort: max
+  openaiWebsockets: auto
+composer:
+  shape: band
+statusLine:
+  preset: full
+dev:
+  autoqaConsent: granted

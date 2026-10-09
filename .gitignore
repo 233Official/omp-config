@@ -1,0 +1,16 @@
+# Deny by default; admit only reviewed configuration files.
+/*
+!/.gitignore
+!/README.md
+!/agent/
+/agent/*
+!/agent/config.yml
+!/agent/config.eco.yml
+!/agent/models.yml
+!/agent/models.eco.yml
+!/agent/hooks/
+/agent/hooks/*
+!/agent/hooks/post/
+/agent/hooks/post/*
+!/agent/hooks/post/onebot.ts
+!/agent/hooks/post/openai-codex-endpoint.ts
