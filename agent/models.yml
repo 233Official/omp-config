@@ -38,3 +38,25 @@ providers:
       maxTokens: 128000
       compat:
         supportsReasoningEffort: true
+    # 2026-10-12：OMP 18.10.0 隔离 CLI 的 low 与默认档位文本调用均返回 ok。
+    - id: glm-5.3-flash
+      name: GLM 5.3 Flash
+      api: openai-completions
+      reasoning: true
+      thinking:
+        mode: effort
+        efforts: [ low, high, max ]
+        defaultLevel: max
+        requiresEffort: true
+      supportsTools: true
+      input: [ text, image ]
+      # 官方公开规格；CPA 上下文／输出上限未经边界测试。
+      contextWindow: 1000000
+      maxTokens: 131072
+      compat:
+        supportsReasoningEffort: true
+        maxTokensField: max_tokens
+        extraBody:
+          thinking:
+            type: enabled
+            clear_thinking: false
