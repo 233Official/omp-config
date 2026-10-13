@@ -1,0 +1,44 @@
+setupVersion: 2
+modelRoles:
+  default: openai-codex/gpt-6-astra:medium
+  advisor: openai-codex/gpt-6-astra:high
+  commit: openai-codex/gpt-6.1-sol:medium
+  plan: openai-codex/gpt-6-astra:xhigh
+  slow: openai-codex/gpt-6-astra:max
+  task: openai-codex/gpt-6-astra:auto
+  vision: openai-codex/gpt-6-astra:high
+  designer: openai-codex/gpt-6-astra:xhigh
+  smol: openai-codex/gpt-6.1-sol:medium
+  tiny: openai-codex/gpt-6.1-sol:medium
+defaultThinkingLevel: max
+modelProviderOrder:
+- openai-codex
+compaction:
+  enabled: true
+  methodOrder:
+  - remote
+  - soft
+task:
+  showResolvedModelBadge: true
+  enableLsp: true
+lsp:
+  enabled: true
+  diagnosticsOnWrite: true
+astGrep:
+  enabled: true
+astEdit:
+  enabled: true
+display:
+  shimmer: classic
+  showTokenUsage: true
+autoResume: false
+hideThinkingBlock: false
+providers:
+  autoThinkingMaxEffort: max
+  openaiWebsockets: auto
+composer:
+  shape: band
+statusLine:
+  preset: full
+dev:
+  autoqaConsent: granted

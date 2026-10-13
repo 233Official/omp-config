@@ -6,6 +6,7 @@
 /agent/*
 !/agent/config.yml
 !/agent/config.eco.yml
+!/agent/config.burn.yml
 !/agent/models.yml
 !/agent/models.eco.yml
 !/agent/hooks/
