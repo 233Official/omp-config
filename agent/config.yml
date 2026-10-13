@@ -10,7 +10,7 @@ modelRoles:
   designer: openai-codex/gpt-6.1-sol:xhigh
   smol: cpa/glm-5.3-flash:max
   tiny: cpa/glm-5.3-flash:max
-defaultThinkingLevel: max
+defaultThinkingLevel: xhigh
 modelProviderOrder:
 - openai-codex
 compaction:
